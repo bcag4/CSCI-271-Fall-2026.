@@ -2,14 +2,13 @@
 #include <string>
 using namespace std;
 
- int main() {
+int main() {
     cout << "Hello, world!" << endl;
 
-string James;
+    string James;
+    cout << "what is your name? ";
+    cin >> James;
 
-     cout << "what is your name? ";
-     cin >> James;
-
-cout << "Nice to meet you," << James << "!" << endl;
-return 0;
- }
+    cout << "Nice to meet you, " << James << "!" << endl;
+    return 0;
+}
