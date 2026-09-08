@@ -7,4 +7,4 @@ string James;
      cout << "what is your name? ";
      cin >> James;
 cout << "Nice to meet you," << James << "!" << endl;
-return 0 ;
+return 0;
