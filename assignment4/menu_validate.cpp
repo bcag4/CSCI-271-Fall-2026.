@@ -1,7 +1,7 @@
 // Name: Brian Caguana
 // Assignment 4
 // Program: menu_validate.cpp
-// Description: Repeatedly prompts the user for a valid menu choice (1, 2, or 3) until valid input is
+// Description: Repeatedly prompts the user for a valid menu choice (1, 2, or 3) until valid input is made
 
 #include <iostream> // Grabs the input/output toolkit so we can talk to the user
 
