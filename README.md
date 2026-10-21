@@ -1,8 +1,23 @@
-# CSCI-271-Fall-2026. 
-# Assignment 1 - Personalize Hello World 
-This C++ uses "Hello, world!" , to greet the user and then asks them to type there name in which greets them back.
-# How to Run 
-Open 'hello.cpp' in an online environment like OnlineGBD, compile the file and Run.
-# AI Assistance Disclosure
-I used Ai to help find spelling errors or missing variables.
- 
+// Brian Caguana
+// Assignment 1 
+
+#include <iostream> // Loads the tool to show text and take keyboard input
+using namespace std;
+
+int main() {
+    // Prints "Hello, world!" on the screen
+    cout << "Hello, world!" << endl;
+
+    // Creates a storage box named "name" to hold text
+    string name;
+
+    // Asks for your name and waits for you to type it
+    cout << "What is your name? ";
+    cin >> name;
+
+    // Prints a personalized greeting using the name you typed
+    cout << "Nice to meet you, " << name << "!" << endl;
+
+    // Tells the computer that the program finished successfully
+    return 0;
+}
