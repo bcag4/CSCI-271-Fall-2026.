@@ -1,3 +1,7 @@
+// Name: Brian Caguana
+// Assignment: 2
+// Program: mini_lab.cpp
+// Description: Asks the user for their name and age, then prints out a friendly personalized greeting.
 #include <iostream>
 using namespace std;
 
