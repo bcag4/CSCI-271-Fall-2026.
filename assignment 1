@@ -1,0 +1,24 @@
+// Brian Caguana
+// Assignment 1 
+
+#include <iostream> // Loads the tool to show text and take keyboard input
+#include <string>   // Loads the tool to work with words and names
+using namespace std;
+
+int main() {
+    // Prints "Hello, world!" on the screen
+    cout << "Hello, world!" << endl;
+
+    // Creates a storage box named "name" to hold text
+    string name;
+
+    // Asks for your name and waits for you to type it
+    cout << "What is your name? ";
+    cin >> name;
+
+    // Prints a personalized greeting using the name you typed
+    cout << "Nice to meet you, " << name << "!" << endl;
+
+    // Tells the computer that the program finished successfully
+    return 0;
+}
