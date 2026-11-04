@@ -1,42 +1,41 @@
 // Name: Brian J. Caguanaguallpa
 // Assignment 7
-#include <iostream> // include iostream for cin and cout
+#include <iostream> // Includes the input/output stream library for console input and output
 
-using namespace std; // standard namespace shortcut
+using namespace std; // Allows usage of standard library components without the std:: prefix
 
-int main() { // program starts here
-    const int SIZE = 8; // fixed size of our array
-    int arr[SIZE] = {11, 22, 33, 44, 55, 66, 77, 88}; // sorted list to search through
+int main() { // Main function where program execution starts
+    const int SIZE = 8; // Declares a constant integer representing the fixed size of the array
+    int arr[SIZE] = {11, 22, 33, 44, 55, 66, 77, 88}; // Initializes a sorted array of 8 integers safely within bounds (0 to SIZE - 1)
     
-    int target; // number we want to find
-    int low = 0; // start of search range
-    int high = SIZE - 1; // end of search range
-    int foundIndex = -1; // default to -1 meaning not found yet
+    int target; // Declares a variable to store the number the user wants to search for
+    int low = 0; // Initializes the lower bound index of the search space to 0
+    int high = SIZE - 1; // Initializes the upper bound index to SIZE - 1 (index 7)
+    int foundIndex = -1; // Initializes foundIndex to -1 to flag if the target hasn't been found yet
     
-    cout << "Enter a number to search for: "; // ask user for input
-    cin >> target; // grab the target number
+    cout << "Enter a number to search for: "; // Prompts the user to input a target number
+    cin >> target; // Reads the user's input into the target variable
     
-    while (low <= high) { // loop while search space is valid
-        int mid = (low + high) / 2; // find the middle index
+    while (low <= high) { // Loops as long as the search range is valid and lower index doesn't exceed upper index
+        int mid = (low + high) / 2; // Calculates the middle index of the current active search range
         
-        if (arr[mid] == target) { // did we find it?
-            foundIndex = mid; // yup, save the index
-            break; // get out of the loop
+        if (arr[mid] == target) { // Checks if the element at the middle index matches the target
+            foundIndex = mid; // Saves the current middle index as the found location
+            break; // Exits the while loop immediately since the target is found
         }
-        else if (arr[mid] < target) {
-            low = mid + 1; // target is higher up, shift low bound
+        else if (arr[mid] < target) { // Checks if the middle element is smaller than the target
+            low = mid + 1; // Narrows the search range to the upper half by shifting the low boundary up
         }
-        else {
-            high = mid - 1; // target is lower down, shift high bound
-        }
-    }
+        else { // Executes if the middle element is greater than the target
+            high = mid - 1; // Narrows the search range to the lower half by shifting the high boundary down
+        } // Ends the conditional checking block
+    } // Ends the binary search while loop
     
-    // print out the final result based on foundIndex
-    if (foundIndex != -1) {
-        cout << target << " found at index " << foundIndex << endl;
-    } else {
-        cout << target << " not found" << endl;
-    }
+    if (foundIndex != -1) { // Checks if foundIndex was updated from -1 (meaning the target was found)
+        cout << target << " found at index " << foundIndex << endl; // Prints success message with the index
+    } else { // Executes if foundIndex is still -1 (meaning the target was not in the array)
+        cout << target << " not found" << endl; // Prints failure message indicating the number is missing
+    } // Ends the result display conditional block
     
-    return 0; // exit cleanly
-}
+    return 0; // Returns 0 to signal successful program completion
+} // End of the main function
