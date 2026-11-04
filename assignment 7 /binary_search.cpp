@@ -1,43 +1,42 @@
-#include <iostream>
+// Name: Brian J. Caguanaguallpa
+// Assignment 7
+#include <iostream> // include iostream for cin and cout
 
-using namespace std;
+using namespace std; // standard namespace shortcut
 
-int main() {
-    // Set up our fixed size and sorted array
-    const int SIZE = 8; 
-    int arr[SIZE] = {11, 22, 33, 44, 55, 66, 77, 88};
+int main() { // program starts here
+    const int SIZE = 8; // fixed size of our array
+    int arr[SIZE] = {11, 22, 33, 44, 55, 66, 77, 88}; // sorted list to search through
     
-    int target;
-    int low = 0;
-    int high = SIZE - 1;
-    int foundIndex = -1; // Default to -1 so we know if it's missing
+    int target; // number we want to find
+    int low = 0; // start of search range
+    int high = SIZE - 1; // end of search range
+    int foundIndex = -1; // default to -1 meaning not found yet
     
-    // Ask the user what number they are hunting for
-    cout << "Enter a number to search for: ";
-    cin >> target;
+    cout << "Enter a number to search for: "; // ask user for input
+    cin >> target; // grab the target number
     
-    // Keep halving the search space until low crosses high
-    while (low <= high) {
-    int mid = (low + high) / 2; // Find the exact middle
+    while (low <= high) { // loop while search space is valid
+        int mid = (low + high) / 2; // find the middle index
         
-    if (arr[mid] == target) {
-        foundIndex = mid;   // Got a match! Save the index
-        break;          // Jump out of the loop
-    }
-    else if (arr[mid] < target) {
-    low = mid + 1;  // Target is bigger, throw away the left half
-    }
-    else {
-    high = mid - 1;  // Target is smaller, throw away the right half
-    }
+        if (arr[mid] == target) { // did we find it?
+            foundIndex = mid; // yup, save the index
+            break; // get out of the loop
+        }
+        else if (arr[mid] < target) {
+            low = mid + 1; // target is higher up, shift low bound
+        }
+        else {
+            high = mid - 1; // target is lower down, shift high bound
+        }
     }
     
-    // Print whether we found it or not
+    // print out the final result based on foundIndex
     if (foundIndex != -1) {
         cout << target << " found at index " << foundIndex << endl;
     } else {
         cout << target << " not found" << endl;
     }
     
-    return 0;
+    return 0; // exit cleanly
 }
